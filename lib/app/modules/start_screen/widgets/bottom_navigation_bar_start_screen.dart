@@ -37,7 +37,9 @@ class BottomNavigationarStartScreenWidget extends StatelessWidget {
             flex: 1,
             child: MaterialButton(
               height: MyConstraint.buttonHeight,
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed(AppPages.INITIAL_SP);
+              },
               color: MyColors.dark,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),

@@ -50,6 +50,7 @@ class ConnectWithWalletBodyWidget extends StatelessWidget {
                 return ButtonWalletOptions(
                   image: MyStrings.listOptionWalletIcon[index],
                   text: MyStrings.listOptionWalletTittle[index],
+                  index: index,
                 );
               },
               separatorBuilder: (_, __) {
