@@ -1,0 +1,44 @@
+name: enefte
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment: 
+  sdk: '>=2.16.1 <3.0.0'
+
+dependencies: 
+  introduction_screen: ^3.0.0
+  cupertino_icons: ^1.0.2
+  get: 4.6.1
+  flutter: 
+    sdk: flutter
+
+dev_dependencies: 
+  flutter_lints: ^1.0.0
+  lints: 1.0.1
+  flutter_test: 
+    sdk: flutter
+
+flutter: 
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/images/global/images/
+    - assets/images/global/icons/
+  fonts:
+  - family: GilroyBold
+    fonts:
+      - asset: fonts/Gilroy-Bold.ttf
+  - family: GilroyMedium
+    fonts:
+      - asset: fonts/Gilroy-Medium.ttf
+  - family: GilroyRegular
+    fonts:
+      - asset: fonts/Gilroy-Regular.ttf
+  - family: GilroyLight
+    fonts:
+      - asset: fonts/Gilroy-Light.ttf
+  - family: GilroyThin
+    fonts:
+      - asset: fonts/Gilroy-Thin.ttf
+
