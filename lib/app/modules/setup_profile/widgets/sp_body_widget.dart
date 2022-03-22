@@ -81,7 +81,7 @@ class SPBodyWidget extends StatelessWidget {
         ),
         color: MyColors.primaryColor,
         onPressed: () {
-          Get.offAllNamed(AppPages.INITIAL_WP);
+          Get.offAllNamed(AppPages.INITIAL_NV);
         },
         child: Text(
           "Submit",
@@ -135,7 +135,7 @@ class SPBodyWidget extends StatelessWidget {
           flex: 0,
           child: Image(
             image: AssetImage(
-              "assets/images/global/images/default_profile.png",
+              "assets/images/default_profile.png",
             ),
           ),
         ),

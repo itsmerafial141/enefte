@@ -27,4 +27,74 @@ class MyStrings {
     "assets/icons/cww_icon_shield.png",
     "assets/icons/cww_con_link.png",
   ];
+
+  // Homepage
+  static final List listKategoriHomePage = [
+    "Trending",
+    "Art",
+    "Gaming",
+    "Culture",
+    "Video",
+    "Animation",
+    "Image",
+  ];
+
+  static final List listCardImage = [
+    "assets/images/Rectangle 8.png",
+    "assets/images/nft1.png",
+  ];
+
+  //Navigasi
+  static final List listNavigasiImage = [
+    "assets/icons/Icon Home.png",
+    "assets/icons/Icon Search.png",
+    "assets/icons/Icon Stats.png",
+    "assets/icons/Icon Profile.png",
+  ];
+
+  // nama
+
+  static final hurufVokal = [
+    "a",
+    "i",
+    "u",
+    "e",
+    "o",
+  ];
+  static final huruf1 = [
+    "d",
+    "f",
+    "g",
+    "h",
+    "k",
+    "m",
+    "n",
+    "p",
+    "r",
+    "s",
+    "t",
+  ];
+  static final hurufKonsonan = [
+    "b",
+    "c",
+    "d",
+    "f",
+    "g",
+    "h",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+  ];
 }

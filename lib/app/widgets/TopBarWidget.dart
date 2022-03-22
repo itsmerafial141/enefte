@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:enefte/app/values/styles.dart';
 import 'package:flutter/material.dart';
 

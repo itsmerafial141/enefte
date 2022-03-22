@@ -7,5 +7,6 @@ class MyColors {
   static var dark50 = Color.fromRGBO(37, 51, 65, 0.5);
   static var white = Color.fromARGB(255, 245, 248, 250);
   static var grayLight = Color.fromARGB(255, 170, 184, 194);
-  static var success = Color.fromARGB(255, 242, 102, 102);
+  static var danger = Color.fromARGB(255, 242, 102, 102);
+  static var success = Color.fromARGB(255, 0, 203, 106);
 }

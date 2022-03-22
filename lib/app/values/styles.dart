@@ -29,7 +29,7 @@ class MyStyles {
   );
   static TextStyle caption = TextStyle(
     fontFamily: "GilroyRegular",
-    color: MyColors.white,
+    color: MyColors.grayLight,
     fontSize: 12,
   );
   static TextStyle smallCaption = TextStyle(

@@ -22,7 +22,7 @@ class ConnectWithWalletBodyWidget extends StatelessWidget {
                 Get.back();
               },
               icon: Icons.arrow_back_ios,
-              image: "assets/images/global/images/logo.png",
+              image: "assets/images/logo.png",
             ),
             Image(
               image: AssetImage(

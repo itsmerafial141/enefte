@@ -12,6 +12,11 @@ abstract class Routes {
   static const CONNECT_WITH_WALLET = _Paths.CONNECT_WITH_WALLET;
   static const SETUP_PROFILE = _Paths.SETUP_PROFILE;
   static const WELCOME_PAGE = _Paths.WELCOME_PAGE;
+  static const HOMEPAGE = _Paths.HOMEPAGE;
+  static const NAVIGASI = _Paths.NAVIGASI;
+  static const SEARCH = _Paths.SEARCH;
+  static const STATS = _Paths.STATS;
+  static const PROFILE = _Paths.PROFILE;
 }
 
 abstract class _Paths {
@@ -21,4 +26,9 @@ abstract class _Paths {
   static const CONNECT_WITH_WALLET = '/connect-with-wallet';
   static const SETUP_PROFILE = '/setup-profile';
   static const WELCOME_PAGE = '/welcome-page';
+  static const HOMEPAGE = '/homepage';
+  static const NAVIGASI = '/navigasi';
+  static const SEARCH = '/search';
+  static const STATS = '/stats';
+  static const PROFILE = '/profile';
 }
