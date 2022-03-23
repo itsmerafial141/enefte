@@ -7,15 +7,6 @@ import 'package:get/get.dart';
 import 'app/routes/app_pages.dart';
 
 void main() {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // // SystemChrome.setSystemUIOverlayStyle(
-  // //   SystemUiOverlayStyle(
-  // //     statusBarColor: Colors.transparent, // transparent status bar
-  // //   ),
-  // // );
-  // SystemChrome.setSystemUIOverlayStyle(
-  //   SystemUiOverlayStyle.light,
-  // );
   runApp(
     AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
