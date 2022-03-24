@@ -12,6 +12,8 @@ import 'package:enefte/app/modules/profile/bindings/profile_binding.dart';
 import 'package:enefte/app/modules/profile/views/profile_view.dart';
 import 'package:enefte/app/modules/search/bindings/search_binding.dart';
 import 'package:enefte/app/modules/search/views/search_view.dart';
+import 'package:enefte/app/modules/search_page_collection/bindings/search_page_collection_binding.dart';
+import 'package:enefte/app/modules/search_page_collection/views/search_page_collection_view.dart';
 import 'package:enefte/app/modules/setup_profile/bindings/setup_profile_binding.dart';
 import 'package:enefte/app/modules/setup_profile/views/setup_profile_view.dart';
 import 'package:enefte/app/modules/start_screen/bindings/start_screen_binding.dart';
@@ -37,6 +39,7 @@ class AppPages {
   static const INITIAL_SR = Routes.SEARCH;
   static const INITIAL_ST = Routes.STATS;
   static const INITIAL_PR = Routes.PROFILE;
+  static const INITIAL_SC = Routes.SEARCH_PAGE_COLLECTION;
 
   static final routes = [
     GetPage(
@@ -88,6 +91,11 @@ class AppPages {
       name: _Paths.PROFILE,
       page: () => ProfileView(),
       binding: ProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.SEARCH_PAGE_COLLECTION,
+      page: () => SearchPageCollectionView(),
+      binding: SearchPageCollectionBinding(),
     ),
   ];
 }
