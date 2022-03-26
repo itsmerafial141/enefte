@@ -52,6 +52,12 @@ class MyStrings {
     "assets/icons/Icon Profile.png",
   ];
 
+  //Stats
+  static final List listTabStatsView = [
+    "Rankings",
+    "Activity",
+  ];
+
   // nama
 
   static final hurufVokal = [

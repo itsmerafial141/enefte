@@ -18,6 +18,7 @@ abstract class Routes {
   static const STATS = _Paths.STATS;
   static const PROFILE = _Paths.PROFILE;
   static const SEARCH_PAGE_COLLECTION = _Paths.SEARCH_PAGE_COLLECTION;
+  static const STATS_PAGE_RANKINGS = _Paths.STATS_PAGE_RANKINGS;
 }
 
 abstract class _Paths {
@@ -33,4 +34,5 @@ abstract class _Paths {
   static const STATS = '/stats';
   static const PROFILE = '/profile';
   static const SEARCH_PAGE_COLLECTION = '/search-page-collection';
+  static const STATS_PAGE_RANKINGS = '/stats-page-rankings';
 }
