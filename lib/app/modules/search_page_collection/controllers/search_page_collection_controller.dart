@@ -1,5 +1,3 @@
 import 'package:get/get.dart';
 
-class SearchPageCollectionController extends GetxController {
-  
-}
+class SearchPageCollectionController extends GetxController {}

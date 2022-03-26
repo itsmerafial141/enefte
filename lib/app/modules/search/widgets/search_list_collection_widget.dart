@@ -11,14 +11,16 @@ class SRCListCollectionWidget extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 20),
       child: GridView.count(
+        childAspectRatio: 0.85,
         physics: NeverScrollableScrollPhysics(),
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
         shrinkWrap: true,
         crossAxisCount: 2,
         children: List.generate(10, (index) {
           return Container(
             height: 152,
             width: 148,
-            margin: EdgeInsets.all(5),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: Color.fromRGBO(

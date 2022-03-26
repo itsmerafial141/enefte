@@ -90,7 +90,7 @@ class SRCBodyWidget extends GetView<SearchController> {
                               alignment: Alignment.bottomCenter,
                               children: [
                                 Container(
-                                  height: 100,
+                                  height: 76,
                                   width: double.infinity,
                                   decoration: BoxDecoration(
                                     color: MyColors.secondaryColor,
@@ -182,7 +182,7 @@ class SRCBodyWidget extends GetView<SearchController> {
                   Container(
                     margin: EdgeInsets.symmetric(horizontal: 20),
                     child: GridView.count(
-                      childAspectRatio: (1 / 1.5),
+                      childAspectRatio: 0.58,
                       physics: NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
                       crossAxisCount: 2,
@@ -251,7 +251,8 @@ class SRCBodyWidget extends GetView<SearchController> {
                                 SizedBox(
                                   height: 20,
                                 ),
-                                Container(width: 90,
+                                Container(
+                                  width: 90,
                                   padding: EdgeInsets.symmetric(
                                       horizontal: 10, vertical: 5),
                                   decoration: BoxDecoration(
