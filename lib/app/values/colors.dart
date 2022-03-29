@@ -9,4 +9,5 @@ class MyColors {
   static var grayLight = Color.fromARGB(255, 170, 184, 194);
   static var danger = Color.fromARGB(255, 242, 102, 102);
   static var success = Color.fromARGB(255, 0, 203, 106);
+  static var black = Color.fromARGB(255, 12, 17, 27);
 }

@@ -1,24 +1,24 @@
 import 'dart:math' as math;
 
+import 'package:enefte/app/values/strings.dart';
+import 'package:enefte/app/values/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../../../values/colors.dart';
-import '../../../values/strings.dart';
-import '../../../values/styles.dart';
 
-class SRCListCollectionWidget extends StatelessWidget {
+class SRCListFeaturedWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(20),
       width: double.infinity,
+      margin: EdgeInsets.all(20),
       child: StaggeredGrid.count(
-        crossAxisCount: 2,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
+        crossAxisCount: 2,
         children: List.generate(
-          10,
+          4,
           (index) {
             return Container(
               decoration: BoxDecoration(
@@ -29,7 +29,7 @@ class SRCListCollectionWidget extends StatelessWidget {
                   Column(
                     children: [
                       Container(
-                        height: MediaQuery.of(context).size.height * 0.08,
+                        height: MediaQuery.of(context).size.height * 0.1,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(10),
@@ -44,7 +44,7 @@ class SRCListCollectionWidget extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        height: MediaQuery.of(context).size.height * 0.17,
+                        height: MediaQuery.of(context).size.height * 0.15,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(10),
@@ -56,13 +56,13 @@ class SRCListCollectionWidget extends StatelessWidget {
                     ],
                   ),
                   Container(
-                    margin: EdgeInsets.all(20),
+                    margin: EdgeInsets.all(10),
                     width: double.infinity,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
-                          height: MediaQuery.of(context).size.width * 0.02,
+                          height: MediaQuery.of(context).size.width * 0.08,
                         ),
                         Stack(
                           alignment: Alignment.bottomRight,
@@ -119,42 +119,25 @@ class SRCListCollectionWidget extends StatelessWidget {
                           style: MyStyles.caption,
                         ),
                         SizedBox(
-                          height: 10,
+                          height: 5,
                         ),
-                        Row(
-                          children: [
-                            Column(
-                              children: [
-                                Text(
-                                  "Items",
-                                  style: MyStyles.caption,
-                                ),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                Text(
-                                  "${math.Random().nextInt(99)}K",
-                                  style: MyStyles.body,
-                                ),
-                              ],
-                            ),
-                            Spacer(),
-                            Column(
-                              children: [
-                                Text(
-                                  "Owners",
-                                  style: MyStyles.caption,
-                                ),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                Text(
-                                  "${math.Random().nextInt(9)},${math.Random().nextInt(99)}K",
-                                  style: MyStyles.body,
-                                ),
-                              ],
-                            ),
-                          ],
+                        Text(
+                          math.Random().nextInt(2) == 1
+                              ? "${MyStrings.huruf1[math.Random().nextInt(MyStrings.huruf1.length)].toUpperCase()}"
+                                  "${MyStrings.hurufVokal[math.Random().nextInt(MyStrings.hurufVokal.length)]}"
+                                  "${MyStrings.huruf1[math.Random().nextInt(MyStrings.huruf1.length)]}"
+                                  "${MyStrings.hurufVokal[math.Random().nextInt(MyStrings.hurufVokal.length)]}"
+                                  "${MyStrings.huruf1[math.Random().nextInt(MyStrings.huruf1.length)]}"
+                                  " ${MyStrings.hurufKonsonan[math.Random().nextInt(MyStrings.hurufKonsonan.length)].toUpperCase()}"
+                                  "${MyStrings.hurufVokal[math.Random().nextInt(MyStrings.hurufVokal.length)]}"
+                                  "${MyStrings.hurufKonsonan[math.Random().nextInt(MyStrings.hurufKonsonan.length)]}"
+                                  "${MyStrings.hurufVokal[math.Random().nextInt(MyStrings.hurufVokal.length)]}"
+                              : "-",
+                          style: TextStyle(
+                            fontFamily: "GilroyRegular",
+                            color: MyColors.primaryColor,
+                            fontSize: 12,
+                          ),
                         ),
                       ],
                     ),

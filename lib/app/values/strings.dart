@@ -1,3 +1,13 @@
+import 'dart:math' as math;
+import 'package:enefte/app/modules/profile/screens/PRFActivityScreen.dart';
+import 'package:enefte/app/modules/profile/screens/PRFCreatedScreen.dart';
+import 'package:enefte/app/modules/profile/screens/PRFFavoritedScreen.dart';
+import 'package:enefte/app/modules/profile/screens/PRFOfferMadeScreen.dart';
+import 'package:enefte/app/modules/profile/screens/PRFOfferReceivedScreen.dart';
+import 'package:flutter/cupertino.dart';
+
+import '../modules/profile/screens/PRFCollectedScreen.dart';
+
 class MyStrings {
   // Onboarding
   static final List listImageOnBoarding = [
@@ -44,6 +54,19 @@ class MyStrings {
     "assets/images/nft1.png",
   ];
 
+  static final List listNameCategories = [
+    "-",
+    "${MyStrings.huruf1[math.Random().nextInt(MyStrings.huruf1.length)].toUpperCase()}"
+        "${MyStrings.hurufVokal[math.Random().nextInt(MyStrings.hurufVokal.length)]}"
+        "${MyStrings.huruf1[math.Random().nextInt(MyStrings.huruf1.length)]}"
+        "${MyStrings.hurufVokal[math.Random().nextInt(MyStrings.hurufVokal.length)]}"
+        "${MyStrings.huruf1[math.Random().nextInt(MyStrings.huruf1.length)]}"
+        " ${MyStrings.hurufKonsonan[math.Random().nextInt(MyStrings.hurufKonsonan.length)].toUpperCase()}"
+        "${MyStrings.hurufVokal[math.Random().nextInt(MyStrings.hurufVokal.length)]}"
+        "${MyStrings.hurufKonsonan[math.Random().nextInt(MyStrings.hurufKonsonan.length)]}"
+        "${MyStrings.hurufVokal[math.Random().nextInt(MyStrings.hurufVokal.length)]}",
+  ];
+
   //Navigasi
   static final List listNavigasiImage = [
     "assets/icons/Icon Home.png",
@@ -56,6 +79,28 @@ class MyStrings {
   static final List listTabStatsView = [
     "Rankings",
     "Activity",
+  ];
+
+  //Profile
+  static final List listTabProfileView = [
+    "Collected",
+    "Created",
+    "Favorited",
+    "Offers Mode",
+    "Offers Received",
+  ];
+
+  static final List<Widget> listProfileScreen = [
+    PRFCollectedScreen(),
+    PRFCreatedScreen(),
+    PRFActivityScreen(),
+    PRFFavoritedScreen(),
+    PRFOfferMadeScreen(),
+    PRFOfferReceivedScreen(),
+  ];
+  static final List listCreatedFilter = [
+    "Items",
+    "Collections",
   ];
 
   // nama

@@ -58,18 +58,6 @@ class NavigasiView extends GetView<NavigasiController> {
           children: listNavigasiTab,
         ),
       ),
-
-      // BottomNavigationBar(
-      //   backgroundColor: MyColors.secondaryColor,
-      //   unselectedItemColor: MyColors.grayLight,
-      //   selectedItemColor: MyColors.primaryColor,
-      //   currentIndex: controller.tabIndex.value,
-      //   onTap: controller.changeTabIndex,
-      //   showSelectedLabels: false,
-      //   showUnselectedLabels: false,
-      //   selectedIconTheme: IconThemeData(color: MyColors.grayLight),
-      //   items: listNavigasiTab,
-      // ),
     );
   }
 }

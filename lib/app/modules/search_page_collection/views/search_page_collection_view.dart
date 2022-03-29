@@ -32,7 +32,8 @@ class SearchPageCollectionView extends GetView<SearchPageCollectionController> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+                      margin:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 40),
                       width: double.infinity,
                       child: Row(
                         children: [
