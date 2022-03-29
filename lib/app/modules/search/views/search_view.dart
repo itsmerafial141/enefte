@@ -1,12 +1,9 @@
-import 'dart:math' as math;
 import 'package:enefte/app/values/colors.dart';
 import 'package:enefte/app/values/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import 'package:get/get.dart';
 
-import '../../../values/strings.dart';
 import '../controllers/search_controller.dart';
 import '../widgets/search_list_card_widget.dart';
 import '../widgets/search_list_collection_widget.dart';

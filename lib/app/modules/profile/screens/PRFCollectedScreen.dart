@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'dart:math' as math;
 import 'package:enefte/app/values/colors.dart';
 import 'package:enefte/app/values/strings.dart';

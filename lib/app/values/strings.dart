@@ -85,6 +85,7 @@ class MyStrings {
   static final List listTabProfileView = [
     "Collected",
     "Created",
+    "Activity",
     "Favorited",
     "Offers Mode",
     "Offers Received",

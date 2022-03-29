@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:enefte/app/modules/profile/controllers/profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

@@ -1,7 +1,10 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 import '../../../values/colors.dart';
 import '../../../values/styles.dart';
+import '../../../widgets/custom_dropdown_filter_widget.dart';
 
 class PRFFilterTabWidget extends StatelessWidget {
   const PRFFilterTabWidget({
@@ -18,32 +21,10 @@ class PRFFilterTabWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Tooltip(
+        CustomDropDownFilterWidget(
           message: message,
-          child: InkWell(
-            child: MaterialButton(
-              color: MyColors.secondaryColor,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              onPressed: onPressed,
-              child: Row(
-                children: [
-                  Text(
-                    text,
-                    style: MyStyles.body,
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Icon(
-                    Icons.arrow_drop_down,
-                    color: MyColors.white,
-                  ),
-                ],
-              ),
-            ),
-          ),
+          text: text,
+          onPressed: onPressed,
         ),
         Spacer(),
         Tooltip(
