@@ -76,6 +76,9 @@ class SRCBodyWidget extends GetView<SearchController> {
                       style: MyStyles.heading2,
                     ),
                   ),
+                  SizedBox(
+                    height: 20,
+                  ),
                   SRCListCardWidget()
                 ],
               )

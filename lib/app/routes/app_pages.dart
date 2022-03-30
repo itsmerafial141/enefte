@@ -6,6 +6,8 @@ import 'package:enefte/app/modules/homepage/bindings/homepage_binding.dart';
 import 'package:enefte/app/modules/homepage/views/homepage_view.dart';
 import 'package:enefte/app/modules/navigasi/bindings/navigasi_binding.dart';
 import 'package:enefte/app/modules/navigasi/views/navigasi_view.dart';
+import 'package:enefte/app/modules/nft_items/bindings/nft_items_binding.dart';
+import 'package:enefte/app/modules/nft_items/views/nft_items_view.dart';
 import 'package:enefte/app/modules/onboarding/bindings/onboarding_binding.dart';
 import 'package:enefte/app/modules/onboarding/views/onboarding_view.dart';
 import 'package:enefte/app/modules/profile/bindings/profile_binding.dart';
@@ -40,6 +42,7 @@ class AppPages {
   static const INITIAL_ST = Routes.STATS;
   static const INITIAL_PR = Routes.PROFILE;
   static const INITIAL_SC = Routes.SEARCH_PAGE_COLLECTION;
+  static const INITIAL_NI = Routes.NFT_ITEMS;
 
   static final routes = [
     GetPage(
@@ -96,6 +99,11 @@ class AppPages {
       name: _Paths.SEARCH_PAGE_COLLECTION,
       page: () => SearchPageCollectionView(),
       binding: SearchPageCollectionBinding(),
+    ),
+    GetPage(
+      name: _Paths.NFT_ITEMS,
+      page: () => NftItemsView(),
+      binding: NftItemsBinding(),
     ),
   ];
 }

@@ -19,6 +19,7 @@ abstract class Routes {
   static const PROFILE = _Paths.PROFILE;
   static const SEARCH_PAGE_COLLECTION = _Paths.SEARCH_PAGE_COLLECTION;
   static const STATS_PAGE_RANKINGS = _Paths.STATS_PAGE_RANKINGS;
+  static const NFT_ITEMS = _Paths.NFT_ITEMS;
 }
 
 abstract class _Paths {
@@ -35,4 +36,5 @@ abstract class _Paths {
   static const PROFILE = '/profile';
   static const SEARCH_PAGE_COLLECTION = '/search-page-collection';
   static const STATS_PAGE_RANKINGS = '/stats-page-rankings';
+  static const NFT_ITEMS = '/nft-items';
 }
