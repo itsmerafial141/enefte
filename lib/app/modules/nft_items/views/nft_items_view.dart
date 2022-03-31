@@ -316,7 +316,9 @@ class NftItemsView extends GetView<NftItemsController> {
             Tooltip(
               message: "Price",
               child: MaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed(AppPages.INITIAL_BD);
+                },
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
