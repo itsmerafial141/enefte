@@ -24,8 +24,6 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
-    - assets/images/global/images/
-    - assets/images/global/icons/
   fonts:
   - family: GilroyBold
     fonts:

@@ -23,6 +23,8 @@ abstract class Routes {
   static const NFT_ITEM_PREVIES = _Paths.NFT_ITEM_PREVIES;
   static const NFT_ITEM_PREVIEW = _Paths.NFT_ITEM_PREVIEW;
   static const COLLECTION_ITEMS = _Paths.COLLECTION_ITEMS;
+  static const BID_DETAILS = _Paths.BID_DETAILS;
+  static const BID_FINISH = _Paths.BID_FINISH;
 }
 
 abstract class _Paths {
@@ -43,4 +45,6 @@ abstract class _Paths {
   static const NFT_ITEM_PREVIES = '/nft-item-previes';
   static const NFT_ITEM_PREVIEW = '/nft-item-preview';
   static const COLLECTION_ITEMS = '/collection-items';
+  static const BID_DETAILS = '/bid-details';
+  static const BID_FINISH = '/bid-finish';
 }

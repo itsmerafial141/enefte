@@ -1,5 +1,9 @@
 import 'package:get/get.dart';
 
+import 'package:enefte/app/modules/bid_details/bindings/bid_details_binding.dart';
+import 'package:enefte/app/modules/bid_details/views/bid_details_view.dart';
+import 'package:enefte/app/modules/bid_finish/bindings/bid_finish_binding.dart';
+import 'package:enefte/app/modules/bid_finish/views/bid_finish_view.dart';
 import 'package:enefte/app/modules/collection_items/bindings/collection_items_binding.dart';
 import 'package:enefte/app/modules/collection_items/views/collection_items_view.dart';
 import 'package:enefte/app/modules/connect_with_wallet/bindings/connect_with_wallet_binding.dart';
@@ -49,6 +53,8 @@ class AppPages {
   static const INITIAL_NI = Routes.NFT_ITEMS;
   static const INITIAL_NP = Routes.NFT_ITEM_PREVIEW;
   static const INITIAL_CI = Routes.COLLECTION_ITEMS;
+  static const INITIAL_BF = Routes.BID_FINISH;
+  static const INITIAL_BD = Routes.BID_DETAILS;
 
   static final routes = [
     GetPage(
@@ -120,6 +126,16 @@ class AppPages {
       name: _Paths.COLLECTION_ITEMS,
       page: () => CollectionItemsView(),
       binding: CollectionItemsBinding(),
+    ),
+    GetPage(
+      name: _Paths.BID_DETAILS,
+      page: () => BidDetailsView(),
+      binding: BidDetailsBinding(),
+    ),
+    GetPage(
+      name: _Paths.BID_FINISH,
+      page: () => BidFinishView(),
+      binding: BidFinishBinding(),
     ),
   ];
 }
