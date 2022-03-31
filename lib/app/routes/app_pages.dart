@@ -1,11 +1,15 @@
 import 'package:get/get.dart';
 
+import 'package:enefte/app/modules/collection_items/bindings/collection_items_binding.dart';
+import 'package:enefte/app/modules/collection_items/views/collection_items_view.dart';
 import 'package:enefte/app/modules/connect_with_wallet/bindings/connect_with_wallet_binding.dart';
 import 'package:enefte/app/modules/connect_with_wallet/views/connect_with_wallet_view.dart';
 import 'package:enefte/app/modules/homepage/bindings/homepage_binding.dart';
 import 'package:enefte/app/modules/homepage/views/homepage_view.dart';
 import 'package:enefte/app/modules/navigasi/bindings/navigasi_binding.dart';
 import 'package:enefte/app/modules/navigasi/views/navigasi_view.dart';
+import 'package:enefte/app/modules/nft_item_preview/bindings/nft_item_preview_binding.dart';
+import 'package:enefte/app/modules/nft_item_preview/views/nft_item_preview_view.dart';
 import 'package:enefte/app/modules/nft_items/bindings/nft_items_binding.dart';
 import 'package:enefte/app/modules/nft_items/views/nft_items_view.dart';
 import 'package:enefte/app/modules/onboarding/bindings/onboarding_binding.dart';
@@ -43,6 +47,8 @@ class AppPages {
   static const INITIAL_PR = Routes.PROFILE;
   static const INITIAL_SC = Routes.SEARCH_PAGE_COLLECTION;
   static const INITIAL_NI = Routes.NFT_ITEMS;
+  static const INITIAL_NP = Routes.NFT_ITEM_PREVIEW;
+  static const INITIAL_CI = Routes.COLLECTION_ITEMS;
 
   static final routes = [
     GetPage(
@@ -104,6 +110,16 @@ class AppPages {
       name: _Paths.NFT_ITEMS,
       page: () => NftItemsView(),
       binding: NftItemsBinding(),
+    ),
+    GetPage(
+      name: _Paths.NFT_ITEM_PREVIEW,
+      page: () => NftItemPreviewView(),
+      binding: NftItemPreviewBinding(),
+    ),
+    GetPage(
+      name: _Paths.COLLECTION_ITEMS,
+      page: () => CollectionItemsView(),
+      binding: CollectionItemsBinding(),
     ),
   ];
 }

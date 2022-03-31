@@ -1,4 +1,5 @@
 import 'dart:math' as math;
+import 'package:enefte/app/routes/app_pages.dart';
 import 'package:enefte/app/values/colors.dart';
 import 'package:enefte/app/values/strings.dart';
 import 'package:enefte/app/values/styles.dart';
@@ -111,7 +112,7 @@ class NftItemsView extends GetView<NftItemsController> {
                 message: "NFT Items",
                 child: InkWell(
                   onTap: () {
-                    print("sssttt");
+                    Get.toNamed(AppPages.INITIAL_NP);
                   },
                   child: Image(
                     width: double.infinity,
@@ -320,7 +321,7 @@ class NftItemsView extends GetView<NftItemsController> {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 color: MyColors.primaryColor,
-                padding: EdgeInsets.symmetric(horizontal: 20,vertical: 15),
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                 height: 20,
                 child: Row(
                   children: [
