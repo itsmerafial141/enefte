@@ -62,7 +62,7 @@ class BidFinishView extends GetView<BidFinishController> {
                 ),
                 color: MyColors.primaryColor,
                 onPressed: () {
-                  Get.toNamed(AppPages.INITIAL_HP);
+                  Get.offAllNamed(AppPages.INITIAL_HP);
                 },
                 child: Text(
                   "Submit",

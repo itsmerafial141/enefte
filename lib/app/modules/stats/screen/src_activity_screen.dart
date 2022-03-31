@@ -194,7 +194,7 @@ class SRCActivityScreen extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(
         vertical: 10,
-        horizontal: 20,
+        horizontal: 10,
       ),
       decoration: BoxDecoration(
         color: MyColors.secondaryColor,
