@@ -12,30 +12,21 @@ class SRCActivityScreen extends StatelessWidget {
       children: [
         Row(
           children: [
-            Expanded(
-              flex: 4,
-              child: Tooltip(
-                message: "All Event Type",
-                child: InkWell(
-                  onTap: () {},
-                  borderRadius: BorderRadius.circular(10),
-                  child: _filterStats("All Event Type"),
-                ),
+            Tooltip(
+              message: "All Event Type",
+              child: InkWell(
+                onTap: () {},
+                borderRadius: BorderRadius.circular(10),
+                child: _filterStats("All Event Type"),
               ),
             ),
-            // Spacer(),
-            SizedBox(
-              width: 10,
-            ),
-            Expanded(
-              flex: 3,
-              child: Tooltip(
-                message: "All Chains",
-                child: InkWell(
-                  onTap: () {},
-                  borderRadius: BorderRadius.circular(10),
-                  child: _filterStats("All Chains"),
-                ),
+            Spacer(),
+            Tooltip(
+              message: "All Chains",
+              child: InkWell(
+                onTap: () {},
+                borderRadius: BorderRadius.circular(10),
+                child: _filterStats("All Chains"),
               ),
             ),
           ],

@@ -1,0 +1,202 @@
+// ignore_for_file: file_names
+import 'dart:math' as math;
+import 'package:enefte/app/values/colors.dart';
+import 'package:enefte/app/values/strings.dart';
+import 'package:enefte/app/values/styles.dart';
+import 'package:flutter/material.dart';
+
+class CLCOfferMadeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      child: ListView.separated(
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        itemBuilder: (context, index) {
+          return Container(
+            padding: EdgeInsets.all(15),
+            decoration: BoxDecoration(
+              color: MyColors.secondaryColor,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.25,
+                      height: MediaQuery.of(context).size.width * 0.25,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                          image: AssetImage(
+                            MyStrings.listCardImage[math.Random().nextInt(
+                              MyStrings.listCardImage.length,
+                            )],
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Karafuru",
+                          style: MyStyles.caption,
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "Mosu #${math.Random().nextInt(9999)}",
+                          style: MyStyles.body,
+                        ),
+                      ],
+                    ),
+                    Spacer(),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          "Sale",
+                          style: TextStyle(
+                            fontFamily: "GilroyLight",
+                            color:
+                                MyStrings.listColorUpDown[math.Random().nextInt(
+                              MyStrings.listColorUpDown.length,
+                            )],
+                            fontSize: 10,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Row(
+                          children: [
+                            Image(
+                              height: 10,
+                              width: 10,
+                              image: AssetImage(
+                                "assets/icons/logos_ethereum.png",
+                              ),
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              "${math.Random().nextInt(9)},${math.Random().nextInt(99)}",
+                              style: MyStyles.caption,
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          "${math.Random().nextInt(60)} minutes ago",
+                          style: MyStyles.smallCaption,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 10),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Column(
+                        children: [
+                          Text(
+                            "USD Price",
+                            style: MyStyles.smallCaption,
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            "\$${math.Random().nextInt(9999)},${math.Random().nextInt(999)}",
+                            style: MyStyles.caption,
+                          ),
+                        ],
+                      ),
+                      Spacer(),
+                      Column(
+                        children: [
+                          Text(
+                            "Quantity",
+                            style: MyStyles.smallCaption,
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            "${math.Random().nextInt(99)}",
+                            style: MyStyles.caption,
+                          ),
+                        ],
+                      ),
+                      Spacer(),
+                      Column(
+                        children: [
+                          Text(
+                            "From",
+                            style: MyStyles.smallCaption,
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            "You",
+                            style: TextStyle(
+                              fontFamily: "GilroyRegular",
+                              color: MyColors.primaryColor,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Spacer(),
+                      Column(
+                        children: [
+                          Text(
+                            "To",
+                            style: MyStyles.smallCaption,
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            "Unnamed",
+                            style: TextStyle(
+                              fontFamily: "GilroyRegular",
+                              color: MyColors.primaryColor,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
+        separatorBuilder: (_, __) {
+          return SizedBox(
+            height: 10,
+          );
+        },
+        itemCount: 10,
+      ),
+    );
+  }
+}

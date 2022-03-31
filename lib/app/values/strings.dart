@@ -1,11 +1,14 @@
 import 'dart:math' as math;
+import 'package:enefte/app/modules/collection_items/screens/CLCFavoritedScreen.dart';
 import 'package:enefte/app/modules/profile/screens/PRFActivityScreen.dart';
 import 'package:enefte/app/modules/profile/screens/PRFCreatedScreen.dart';
 import 'package:enefte/app/modules/profile/screens/PRFFavoritedScreen.dart';
 import 'package:enefte/app/modules/profile/screens/PRFOfferMadeScreen.dart';
 import 'package:enefte/app/modules/profile/screens/PRFOfferReceivedScreen.dart';
+import 'package:enefte/app/values/colors.dart';
 import 'package:flutter/cupertino.dart';
 
+import '../modules/collection_items/screens/CLCOfferMadeScreen.dart';
 import '../modules/profile/screens/PRFCollectedScreen.dart';
 
 class MyStrings {
@@ -104,6 +107,20 @@ class MyStrings {
     "Collections",
   ];
 
+  //Collection_item
+  static final List listTabCollectionItems = [
+    "Items",
+    "Activity",
+  ];
+
+  static final List<Widget> listCollectionScreen = [
+    CLCFavoritedScreen(),
+    CLCOfferMadeScreen(),
+  ];
+  static final List<Color> listColorUpDown = [
+    MyColors.danger,
+    MyColors.success,
+  ];
   // nama
 
   static final hurufVokal = [

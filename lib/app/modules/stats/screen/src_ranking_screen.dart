@@ -12,30 +12,21 @@ class SRCRankingsScreen extends StatelessWidget {
       children: [
         Row(
           children: [
-            Expanded(
-              flex: 4,
-              child: Tooltip(
-                message: "All Categories",
-                child: InkWell(
-                  onTap: () {},
-                  borderRadius: BorderRadius.circular(10),
-                  child: _filterStats("All Categories"),
-                ),
+            Tooltip(
+              message: "All Categories",
+              child: InkWell(
+                onTap: () {},
+                borderRadius: BorderRadius.circular(10),
+                child: _filterStats("All Categories"),
               ),
             ),
-            // Spacer(),
-            SizedBox(
-              width: 10,
-            ),
-            Expanded(
-              flex: 3,
-              child: Tooltip(
-                message: "All Chains",
-                child: InkWell(
-                  onTap: () {},
-                  borderRadius: BorderRadius.circular(10),
-                  child: _filterStats("All Chains"),
-                ),
+            Spacer(),
+            Tooltip(
+              message: "All Chains",
+              child: InkWell(
+                onTap: () {},
+                borderRadius: BorderRadius.circular(10),
+                child: _filterStats("All Chains"),
               ),
             ),
           ],
