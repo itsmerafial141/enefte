@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "732273266954",
+    "project_id": "enefte-afeef",
+    "storage_bucket": "enefte-afeef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:732273266954:android:6c944f3e60478cfb926af3",
+        "android_client_info": {
+          "package_name": "com.rafial.enefte"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "732273266954-9hgggqb794fba7mii9vulfpdjrnqiii7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8lYRVRG8XFRNMzsqxAUytVyNu8NNazps"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "732273266954-9hgggqb794fba7mii9vulfpdjrnqiii7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -12,6 +12,11 @@ import '../modules/collection_items/screens/CLCOfferMadeScreen.dart';
 import '../modules/profile/screens/PRFCollectedScreen.dart';
 
 class MyStrings {
+  // API
+  static final String url =
+      "https://firestore.googleapis.com/v1/projects/enefte-afeef/databases/(default)/documents";
+  static final String api_key = "AIzaSyB8lYRVRG8XFRNMzsqxAUytVyNu8NNazps";
+
   // Onboarding
   static final List listImageOnBoarding = [
     "assets/images/onb1.png",

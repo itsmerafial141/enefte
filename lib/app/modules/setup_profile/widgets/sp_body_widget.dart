@@ -1,3 +1,4 @@
+import 'package:enefte/app/modules/setup_profile/controllers/setup_profile_controller.dart';
 import 'package:enefte/app/modules/setup_profile/widgets/sp_text_field_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,7 +9,7 @@ import '../../../values/constraint.dart';
 import '../../../values/styles.dart';
 import '../../../widgets/TopBarWidget.dart';
 
-class SPBodyWidget extends StatelessWidget {
+class SPBodyWidget extends GetView<SetupProfileController> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -46,12 +47,14 @@ class SPBodyWidget extends StatelessWidget {
             ),
             SPTextFieldWidget(
               label: "Username",
+              controller: controller.usernameController,
             ),
             SizedBox(
               height: 20,
             ),
             SPTextFieldWidget(
               label: "Email",
+              controller: controller.emailController,
             ),
             SizedBox(
               height: 20,
@@ -81,7 +84,8 @@ class SPBodyWidget extends StatelessWidget {
         ),
         color: MyColors.primaryColor,
         onPressed: () {
-          Get.offAllNamed(AppPages.INITIAL_NV);
+          // Get.offAllNamed(AppPages.INITIAL_NV);
+          controller.addUsersToFirestore();
         },
         child: Text(
           "Submit",
@@ -115,6 +119,7 @@ class SPBodyWidget extends StatelessWidget {
             height: 109,
             child: TextField(
               style: MyStyles.caption,
+              controller: controller.bioController,
               minLines: 1,
               maxLines: 10,
               decoration: InputDecoration(
