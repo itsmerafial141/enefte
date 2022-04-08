@@ -3,7 +3,6 @@ import 'package:enefte/app/modules/setup_profile/widgets/sp_text_field_widget.da
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../routes/app_pages.dart';
 import '../../../values/colors.dart';
 import '../../../values/constraint.dart';
 import '../../../values/styles.dart';
@@ -19,80 +18,183 @@ class SPBodyWidget extends GetView<SetupProfileController> {
           color: MyColors.dark,
         ),
         width: double.infinity,
-        child: Column(
-          children: [
-            TopBarWidget(
-              icon: Icons.arrow_back_ios,
-              onPressed: () {
-                Get.back();
-              },
-              tittle: "Setup Profile",
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Container(
-              width: double.infinity,
-              child: Text(
-                "Upload Photo Profile",
-                style: MyStyles.body,
+        child: controller.obx(
+          (value) => Column(
+            children: [
+              TopBarWidget(
+                icon: Icons.arrow_back_ios,
+                onPressed: () {
+                  Get.back();
+                },
+                tittle: "Setup Profile",
               ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            photoProfile(),
-            SizedBox(
-              height: 30,
-            ),
-            SPTextFieldWidget(
-              label: "Username",
-              controller: controller.usernameController,
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            SPTextFieldWidget(
-              label: "Email",
-              controller: controller.emailController,
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            bioTextFIeld(),
-            SizedBox(
-              height: 40,
-            ),
-            buttonSubmit(),
-          ],
+              inputBody(),
+              buttonSubmit(
+                Text(
+                  "Submit",
+                  style: MyStyles.button,
+                ),
+              ),
+            ],
+          ),
+          onLoading: Column(
+            children: [
+              inputBody(),
+              buttonSubmit(
+                CircularProgressIndicator(
+                  color: MyColors.white,
+                ),
+              ),
+            ],
+          ),
+          onEmpty: Column(
+            children: [
+              TopBarWidget(
+                icon: Icons.arrow_back_ios,
+                onPressed: () {
+                  Get.back();
+                },
+                tittle: "Setup Profile",
+              ),
+              errorContainer("!nput cannot be empty!"),
+              inputBody(),
+              buttonSubmit(
+                Text(
+                  "Submit",
+                  style: MyStyles.button,
+                ),
+              ),
+            ],
+          ),
+          onError: (value) {
+            return Column(
+              children: [
+                TopBarWidget(
+                  icon: Icons.arrow_back_ios,
+                  onPressed: () {
+                    Get.back();
+                  },
+                  tittle: "Setup Profile",
+                ),
+                errorContainer(value!),
+                inputBody(),
+                buttonSubmit(
+                  Text(
+                    "Submit",
+                    style: MyStyles.button,
+                  ),
+                ),
+              ],
+            );
+          },
         ),
       ),
     );
   }
 
-  Container buttonSubmit() {
+  Widget errorContainer(String text) {
+    return Container(
+      width: Get.width,
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      decoration: BoxDecoration(
+        color: Color.fromRGBO(235, 201, 199, 0.9),
+        border: Border.all(
+          width: 1,
+          color: MyColors.danger,
+        ),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Text(
+        text,
+        style: TextStyle(
+          fontFamily: "GilroyBold",
+          color: MyColors.danger,
+          fontSize: 12,
+        ),
+      ),
+    );
+  }
+
+  Widget inputBody() {
+    return Column(
+      children: [
+        SizedBox(
+          height: 30,
+        ),
+        Container(
+          width: double.infinity,
+          child: Text(
+            "Upload Photo Profile",
+            style: MyStyles.body,
+          ),
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        photoProfile(),
+        SizedBox(
+          height: 30,
+        ),
+        SPTextFieldWidget(
+          label: "Username",
+          controller: controller.usernameController,
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        SPTextFieldWidget(
+          label: "Email",
+          controller: controller.emailController,
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        bioTextFIeld(),
+        SizedBox(
+          height: 40,
+        ),
+      ],
+    );
+  }
+
+  Widget buttonSubmit(Widget child) {
     return Container(
       width: double.infinity,
       // padding: MyConstraint.navigationButton,
       decoration: BoxDecoration(
         color: MyColors.dark,
       ),
-      child: MaterialButton(
+      child:
+          // controller.obx(
+          //   (value) =>
+          MaterialButton(
         height: MyConstraint.buttonHeight,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
         color: MyColors.primaryColor,
         onPressed: () {
-          // Get.offAllNamed(AppPages.INITIAL_NV);
           controller.addUsersToFirestore();
         },
-        child: Text(
-          "Submit",
-          style: MyStyles.button,
-        ),
+        child: child,
+        // Text(
+        //   "Submit",
+        //   style: MyStyles.button,
+        // ),
       ),
+      // onLoading: MaterialButton(
+      //   height: MyConstraint.buttonHeight,
+      //   shape: RoundedRectangleBorder(
+      //     borderRadius: BorderRadius.circular(10),
+      //   ),
+      //   color: MyColors.primaryColor,
+      //   onPressed: () {},
+      //   child: CircularProgressIndicator(
+      //     color: MyColors.white,
+      //   ),
     );
+    //   ),
+    // );
   }
 
   Container bioTextFIeld() {
