@@ -18,76 +18,104 @@ class SPBodyWidget extends GetView<SetupProfileController> {
           color: MyColors.dark,
         ),
         width: double.infinity,
-        child: controller.obx(
-          (value) => Column(
-            children: [
-              TopBarWidget(
-                icon: Icons.arrow_back_ios,
-                onPressed: () {
-                  Get.back();
-                },
-                tittle: "Setup Profile",
-              ),
-              inputBody(),
-              buttonSubmit(
-                Text(
-                  "Submit",
-                  style: MyStyles.button,
-                ),
-              ),
-            ],
-          ),
-          onLoading: Column(
-            children: [
-              inputBody(),
-              buttonSubmit(
-                CircularProgressIndicator(
-                  color: MyColors.white,
-                ),
-              ),
-            ],
-          ),
-          onEmpty: Column(
-            children: [
-              TopBarWidget(
-                icon: Icons.arrow_back_ios,
-                onPressed: () {
-                  Get.back();
-                },
-                tittle: "Setup Profile",
-              ),
-              errorContainer("!nput cannot be empty!"),
-              inputBody(),
-              buttonSubmit(
-                Text(
-                  "Submit",
-                  style: MyStyles.button,
-                ),
-              ),
-            ],
-          ),
-          onError: (value) {
-            return Column(
-              children: [
-                TopBarWidget(
-                  icon: Icons.arrow_back_ios,
-                  onPressed: () {
-                    Get.back();
-                  },
-                  tittle: "Setup Profile",
-                ),
-                errorContainer(value!),
-                inputBody(),
-                buttonSubmit(
+        child: Column(
+          children: [
+            TopBarWidget(
+              icon: Icons.arrow_back_ios,
+              onPressed: () {
+                Get.back();
+              },
+              tittle: "Setup Profile",
+            ),
+            inputBody(),
+            controller.obx(
+              (state) {
+                return buttonSubmit(
                   Text(
                     "Submit",
                     style: MyStyles.button,
                   ),
+                );
+              },
+              onLoading: buttonSubmit(
+                CircularProgressIndicator(
+                  color: MyColors.white,
                 ),
-              ],
-            );
-          },
+              ),
+            )
+          ],
         ),
+
+        // controller.obx(
+        //   (value) => Column(
+        //     children: [
+        //       TopBarWidget(
+        //         icon: Icons.arrow_back_ios,
+        //         onPressed: () {
+        //           Get.back();
+        //         },
+        //         tittle: "Setup Profile",
+        //       ),
+        //       inputBody(),
+        //       buttonSubmit(
+        //         Text(
+        //           "Submit",
+        //           style: MyStyles.button,
+        //         ),
+        //       ),
+        //     ],
+        //   ),
+        //   onLoading: Column(
+        //     children: [
+        //       inputBody(),
+        //       buttonSubmit(
+        //         CircularProgressIndicator(
+        //           color: MyColors.white,
+        //         ),
+        //       ),
+        //     ],
+        //   ),
+        //   onEmpty: Column(
+        //     children: [
+        //       TopBarWidget(
+        //         icon: Icons.arrow_back_ios,
+        //         onPressed: () {
+        //           Get.back();
+        //         },
+        //         tittle: "Setup Profile",
+        //       ),
+        //       errorContainer("!nput cannot be empty!"),
+        //       inputBody(),
+        //       buttonSubmit(
+        //         Text(
+        //           "Submit",
+        //           style: MyStyles.button,
+        //         ),
+        //       ),
+        //     ],
+        //   ),
+        //   onError: (value) {
+        //     return Column(
+        //       children: [
+        //         TopBarWidget(
+        //           icon: Icons.arrow_back_ios,
+        //           onPressed: () {
+        //             Get.back();
+        //           },
+        //           tittle: "Setup Profile",
+        //         ),
+        //         errorContainer(value!),
+        //         inputBody(),
+        //         buttonSubmit(
+        //           Text(
+        //             "Submit",
+        //             style: MyStyles.button,
+        //           ),
+        //         ),
+        //       ],
+        //     );
+        //   },
+        // ),
       ),
     );
   }
@@ -135,6 +163,22 @@ class SPBodyWidget extends GetView<SetupProfileController> {
         SizedBox(
           height: 30,
         ),
+        controller.obx(
+          (state) {
+            return Container(
+              child: state!.contains("100") || state.contains("1100")
+                  ? Column(
+                      children: [
+                        errorContainer("Input cannot be empty!"),
+                        SizedBox(
+                          height: 20,
+                        ),
+                      ],
+                    )
+                  : null,
+            );
+          },
+        ),
         SPTextFieldWidget(
           label: "Username",
           controller: controller.usernameController,
@@ -142,12 +186,53 @@ class SPBodyWidget extends GetView<SetupProfileController> {
         SizedBox(
           height: 20,
         ),
+        controller.obx(
+          (state) {
+            return Container(
+              child: state!.contains("212")
+                  ? Column(
+                      children: [
+                        errorContainer("Email isn't valid! example : example@email.com"),
+                        SizedBox(
+                          height: 20,
+                        ),
+                      ],
+                    )
+                  : state.contains("100") || state.contains("1200")
+                      ? Column(
+                          children: [
+                            errorContainer("Input cannot be empty!"),
+                            SizedBox(
+                              height: 20,
+                            ),
+                          ],
+                        )
+                      : null,
+            );
+          },
+        ),
         SPTextFieldWidget(
           label: "Email",
           controller: controller.emailController,
         ),
         SizedBox(
           height: 20,
+        ),
+        controller.obx(
+          (state) {
+            return Container(
+              child: state!.contains("100") || state.contains("1300")
+                  ? Column(
+                      children: [
+                        errorContainer("Input cannot be empty!"),
+                        SizedBox(
+                          height: 20,
+                        ),
+                      ],
+                    )
+                  : null,
+            );
+          },
         ),
         bioTextFIeld(),
         SizedBox(
@@ -160,14 +245,10 @@ class SPBodyWidget extends GetView<SetupProfileController> {
   Widget buttonSubmit(Widget child) {
     return Container(
       width: double.infinity,
-      // padding: MyConstraint.navigationButton,
       decoration: BoxDecoration(
         color: MyColors.dark,
       ),
-      child:
-          // controller.obx(
-          //   (value) =>
-          MaterialButton(
+      child: MaterialButton(
         height: MyConstraint.buttonHeight,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
@@ -177,27 +258,11 @@ class SPBodyWidget extends GetView<SetupProfileController> {
           controller.addUsersToFirestore();
         },
         child: child,
-        // Text(
-        //   "Submit",
-        //   style: MyStyles.button,
-        // ),
       ),
-      // onLoading: MaterialButton(
-      //   height: MyConstraint.buttonHeight,
-      //   shape: RoundedRectangleBorder(
-      //     borderRadius: BorderRadius.circular(10),
-      //   ),
-      //   color: MyColors.primaryColor,
-      //   onPressed: () {},
-      //   child: CircularProgressIndicator(
-      //     color: MyColors.white,
-      //   ),
     );
-    //   ),
-    // );
   }
 
-  Container bioTextFIeld() {
+  Widget bioTextFIeld() {
     return Container(
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
@@ -234,7 +299,7 @@ class SPBodyWidget extends GetView<SetupProfileController> {
     );
   }
 
-  Row photoProfile() {
+  Widget photoProfile() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
